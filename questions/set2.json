@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Guess your fourth number multiplied by 3?",
+    "index": 3
+  },
+  {
+    "question": "Guess your first number by adding 2 and multiplying the answer to again 2?",
+    "index": 0
+  },
+  {
+    "question": "Guess your second number by subtracting 2 and multiplying the answer to 2?",
+    "index": 1
+  },
+  {
+    "question": "Guess your third number by multiplying 2 and dividing by 2?",
+    "index": 2
+  }
+]

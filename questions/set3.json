@@ -1,0 +1,27 @@
+[
+  {
+    "question": "add all four of your number add any odd number ,divide them by 12 ,add any even number to the result and multiply it by zero,can you guess the result?",
+    "indexList": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "how many odd numbers are there in your selected number,can you add them all the guess the output?",
+    "indexList": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "add your number at 1st and 3rd index divide it by 3 and take it's floor value,what's the o/p?",
+    "indexList": [
+      0,
+      2
+    ]
+  }
+]
