@@ -28,7 +28,7 @@ class _Page3State extends State<Page3> {
         backgroundColor: Colors.grey,
         body: Column(
           children: <Widget>[
-            Page(
+            MyPage(
               numlist: NumList.numList3,
               whichScreen: "select third number",
               num: this.pageNumber,

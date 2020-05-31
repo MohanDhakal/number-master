@@ -26,7 +26,7 @@ class _Page1State extends State<Page1> {
         backgroundColor: Colors.purple,
         body: Column(
           children: <Widget>[
-            Page(
+            MyPage(
               numlist: NumList.numList1,
               whichScreen: "select first number",
               num: this.pageNumber,

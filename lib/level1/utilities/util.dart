@@ -4,18 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UtilityMethods {
-
-
   int getRandIndex() {
     var rng = new Random();
     return rng.nextInt(4);
   }
 
-  List<int> getRandomNumbers({int lowerLimit = 5, int upperLimit = 100}) {
+  Future<List<int>> getRandomNumbers(
+      {int lowerLimit = 5, int upperLimit = 100}) async {
     var rng = new Random();
     var l = new List.generate(
         20, (_) => (rng.nextDouble() * (upperLimit - lowerLimit)).floor() + 5);
-    var newList=LinkedHashSet<int>.from(l).toList();
+    var newList = LinkedHashSet<int>.from(l).toList();
     return newList;
   }
 
@@ -61,7 +60,6 @@ class UtilityMethods {
 
   Future<int> getSelectedNumberWithKey({String key}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
     int num = prefs.getInt(key);
     return num;
   }

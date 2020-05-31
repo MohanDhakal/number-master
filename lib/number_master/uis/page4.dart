@@ -27,7 +27,7 @@ class _Page4State extends State<Page4> {
         backgroundColor: Colors.green,
         body: Column(
           children: <Widget>[
-            Page(
+            MyPage(
               numlist: NumList.numList4,
               whichScreen: "select fourth number",
               num: pageNumber,

@@ -31,7 +31,7 @@ class _Page2State extends State<Page2> {
           backgroundColor: Colors.blue,
           body: Column(
             children: <Widget>[
-              Page(
+              MyPage(
                 numlist: NumList.numList2,
                 whichScreen: "select second number",
                 num: this.pageNumber,

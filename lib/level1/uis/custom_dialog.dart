@@ -1,24 +1,27 @@
-import 'package:animation_practice/number_master/uis/tutorial.dart';
-import 'package:animation_practice/number_master/utilities/constants.dart';
+import 'package:animation_practice/level1/uis/select_numtoword_screen.dart';
+import 'package:animation_practice/level1/utilities/constant.dart';
+import 'package:animation_practice/main.dart';
 import 'package:flutter/material.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 
 class CustomDialog extends StatefulWidget {
   final String title, content;
   final double result;
-//tag for different type of situatioin such as
+
+  //tag for different type of situatioin such as
   //i might not make solution in time or i might get the wrong anser
 
   final String tag;
   final int level;
+  final previousContext;
 
   CustomDialog(
       {this.title = "huh!!!",
       this.result = 20,
+      this.previousContext,
       this.tag,
-      this.level,
-      this.content =
-          "You are unable to make it,please restart the game again! "});
+      this.level = 1,
+      this.content = "You are unable to make it,you can restart the game ! "});
 
   @override
   _CustomDialogState createState() => _CustomDialogState();
@@ -32,10 +35,8 @@ class _CustomDialogState extends State<CustomDialog> {
         //update this image according to right or wrong anser
         widget.result >= 75 ? Constant.clap : Constant.thinking,
       ),
-      title: Text(widget.result < 75 ? "huh!!!" : widget.title),
-      description: Text(widget.result < 75
-          ? "You are unable to make it,please restart the game again! "
-          : widget.content),
+      title: Text(widget.title),
+      description: Text(widget.content),
       buttonCancelText: Text("restart game"),
       buttonOkColor: Colors.green,
       buttonCancelColor: Colors.red,
@@ -49,27 +50,23 @@ class _CustomDialogState extends State<CustomDialog> {
   }
 
   void _handleCancel() {
-    /*switch (widget.tag) {
-      case Constant.timeUp:
-        Navigator.pop(context,widget.level);
-        break;
-
-      case Constant.wrongAns:
-        Navigator.pop(context,widget.level);
-        break;ur
-    }*/
+    Navigator.pop(context);
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (_) => Tutorial()));
+        widget.previousContext, MaterialPageRoute(builder: (_) => Home()));
   }
 
   void _handleOkay() {
-    /*  int lev=widget.level;
-    if(Constant.correctAns==widget.tag){
-
-      Navigator.pop(context, ++lev);
+    switch (widget.level) {
+      case 1:
+        Navigator.pop(context);
+        Navigator.pushReplacement(widget.previousContext,
+            MaterialPageRoute(builder: (_) => SelectNumToWord()));
+        break;
+      case 2:
+        Navigator.pop(context);
+        Navigator.pushReplacement(
+            widget.previousContext, MaterialPageRoute(builder: (_) => Home()));
+        break;
     }
-  }*/
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (_) => Tutorial()));
   }
 }

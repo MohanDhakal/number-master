@@ -44,6 +44,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       setState(() {
         timerEnabled = true;
       });
+
       startTimer();
     });
   }

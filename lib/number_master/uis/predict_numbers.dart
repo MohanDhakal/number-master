@@ -42,7 +42,8 @@ class PredictNumber extends StatelessWidget {
                             Provider.of<PageBloc>(context, listen: false);
                         page.pageNo++;
 
-                        model.buttonPlaceHolderName = "predict  ${page.pageNo} number";
+                        model.buttonPlaceHolderName =
+                            "predict  ${page.pageNo} number";
 
                         model.selectedNumbers.update("check", (value) => 1);
 

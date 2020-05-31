@@ -6,23 +6,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Page extends StatefulWidget {
+class MyPage extends StatefulWidget {
   final List<int> numlist;
   final Color color;
   final String whichScreen;
   final int num;
 
-  Page(
+  MyPage(
       {this.numlist = const [1, 2, 3, 4, 5, 6],
       this.color,
       this.whichScreen,
       this.num});
 
   @override
-  _PageState createState() => _PageState();
+  _MyPageState createState() => _MyPageState();
 }
 
-class _PageState extends State<Page> {
+class _MyPageState extends State<MyPage> {
   static Color activeColor = Colors.red;
 
   static int selectedIndex = 0;
@@ -87,6 +87,7 @@ class _PageState extends State<Page> {
               padding: const EdgeInsets.only(top: 50.0),
               child: Text(
                 widget.whichScreen,
+                //todo: get this font to use
                 style: GoogleFonts.montserrat(
                   fontSize: 24,
                   fontWeight: FontWeight.w300,
