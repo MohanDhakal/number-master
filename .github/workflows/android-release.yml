@@ -29,22 +29,22 @@ on:
 
             #get flutter dependencies
 
-            - run:  flutter pub get
+        - run:  flutter pub get
 
               # Check for any formatting issues in the code.
-            - run: flutter format --set-exit-if-changed .
+        - run: flutter format --set-exit-if-changed .
 
               # Statically analyze the Dart code for any errors.
-            - run: flutter analyze .
+        - run: flutter analyze .
 
               # Run widget tests for our flutter project.
-            - run: flutter test
+        - run: flutter test
 
-            - run: flutter build apk --release --split-per-abi
+        - run: flutter build apk --release --split-per-abi
 
-            - run: flutter build appbundle
+        - run: flutter build appbundle
 
-            - name: Create a Release in GitHub
+        - name: Create a Release in GitHub
 
       # Upload generated apk to the artifacts.
       uses: ncipollo/release-action@v1
