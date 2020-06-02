@@ -1,0 +1,54 @@
+name: Flutter CI-CD
+
+# This workflow is triggered on pushes to the repository.
+
+on:
+  push:
+    branches:
+      - [master]
+
+  # on: push    # Default will running for every branch.
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+
+        #set up java environment for building an android app
+
+        - uses: actions/checkout@v1
+        - uses: actions/setup-java@v1
+          with:
+            java-version:'12.x'
+
+        #setup flutter environement
+        - uses: subosito/flutter-action@v1
+          with:
+            channel:'beta'
+            flutter-version:'1.18.x'
+
+            #get flutter dependencies
+
+            - run:  flutter pub get
+
+              # Check for any formatting issues in the code.
+            - run: flutter format --set-exit-if-changed .
+
+              # Statically analyze the Dart code for any errors.
+            - run: flutter analyze .
+
+              # Run widget tests for our flutter project.
+            - run: flutter test
+
+            - run: flutter build apk --release --split-per-abi
+
+            - run: flutter build appbundle
+
+            - name: Create a Release in GitHub
+
+      # Upload generated apk to the artifacts.
+      uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
+          token: ${{ secrets.GH_TOKEN }}
+          commit: ${{ github.sha }}
