@@ -1,12 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:animation_practice/level1/uis/select_num_screen.dart';
 import 'package:animation_practice/level1/uis/welcome_screen.dart';
-import 'package:animation_practice/number_master/onprogress/question_screen.dart';
-import 'package:animation_practice/number_master/uis/page1.dart';
-import 'package:animation_practice/number_master/uis/page2.dart';
-import 'package:animation_practice/number_master/uis/page3.dart';
-import 'package:animation_practice/number_master/uis/page4.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,12 +9,7 @@ void main() {
   return runApp(MaterialApp(
     initialRoute: Home.routeName,
     routes: {
-      QuestionScreen.routeName: (context) => QuestionScreen(),
       Home.routeName: (context) => Home(),
-      Page1.routeName: (context) => Page1(),
-      Page2.routeName: (context) => Page2(),
-      Page3.routeName: (context) => Page3(),
-      Page4.routeName: (context) => Page4()
     },
     debugShowCheckedModeBanner: false,
     theme: ThemeData(

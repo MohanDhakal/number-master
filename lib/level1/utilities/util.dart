@@ -1,5 +1,6 @@
 import 'dart:collection';
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -55,7 +56,7 @@ class UtilityMethods {
   void putValues({String key, int value}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setInt(key, value);
-    print("The key is : ${key} : The value is: ${value}");
+    print("The key is : $key : The value is: $value");
   }
 
   Future<int> getSelectedNumberWithKey({String key}) async {

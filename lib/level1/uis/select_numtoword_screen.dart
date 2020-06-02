@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:animation_practice/level1/uis/custom_dialog.dart';
 import 'package:animation_practice/level1/uis/numtoword_btn_screen.dart';
 import 'package:animation_practice/level1/utilities/constant.dart';
-import 'package:animation_practice/number_master/utilities/util.dart';
+import 'package:animation_practice/level1//utilities/util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:number_to_words_spelling/number_to_words_spelling.dart';
